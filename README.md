@@ -25,7 +25,8 @@ docker-compose run web python manage.py migrate
 ```bash
 docker-compose run web python manage.py createsuperuser
 ```
-### Проект доступен по адресу http://127.0.0.1:8000 (админ панель http://127.0.0.1:8000/admin/)
+### Проект доступен по адресу http://127.0.0.1:8000 
+  (админ панель http://127.0.0.1:8000/admin/)
 
 ### Остановка контейнеров
 
