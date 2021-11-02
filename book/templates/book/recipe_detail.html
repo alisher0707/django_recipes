@@ -1,0 +1,56 @@
+{% extends "book/base.html" %}
+{% block main %}
+  <section class="jumbotron text-center">
+    <div class="container" id="recipe">
+      <h1 class="jumbotron-heading">{{ recipe.title }}</h1>
+<!--      <small class="text-muted">&#11088 {{ recipe.tries }}  <i><a href="{{ recipe.source }}" id="source">Source: {{ recipe.sourceName }}</a></i></small>-->
+      <div class="row mt-4">
+          <div class="col-md-5 mt-4">
+            <div class="pt-2 pb-4 pr-4 rounded" style="background-color:#d3d9ce">
+                <h4 class="ml-4 mt-4 mb-4">Ingredients</h4>
+                <ul style="text-align:left">
+                    {% for ingredient in ingredients %}
+                      <li>{{ ingredient }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+          </div>
+          <div class="col-md-7 mt-4">
+            <h2 class="mt-2 mb-4" style="font-weight:300;text-align:medium"><i>Instructions</i></h2>
+            <ol style="text-align:left">
+                {% for step in steps %}
+                  <li> {{ step }} </li>
+                {% endfor %}
+            </ol>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5" id="backgroundColor">
+    <div class="container">
+
+
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="loginRequiredModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-danger" id="loginRequiredModalLabel">Error</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Sorry!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
